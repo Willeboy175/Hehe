@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
@@ -14,5 +16,17 @@ public class StartMenu : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public virtual void Yes()
+    {
+        SceneManager.LoadScene("Marry");
+    }
+
+    public virtual void No()
+    {
+        int rng = Mathf.RoundToInt(Random.Range(0, 4));
+
+        SceneManager.LoadScene("Scene" + rng);
     }
 }
